@@ -1,0 +1,28 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: cni-skaffold
+
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    deploy:
+      helm:
+        releases:
+          - name: cni
+            chartPath: helm/
+            namespace: kube-system
+            valuesFiles:
+              - helm/values-dev.yaml
+
+  - name: prod
+    deploy:
+      helm:
+        releases:
+          - name: cni
+            chartPath: helm/
+            namespace: kube-system
+            wait: true
+            upgradeOnChange: true
+

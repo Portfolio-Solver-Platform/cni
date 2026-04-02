@@ -1,0 +1,10 @@
+apiVersion: v2
+name: cni
+description: Handles networking traffic
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: cilium
+    version: 1.19.2
+    repository: "https://helm.cilium.io/"

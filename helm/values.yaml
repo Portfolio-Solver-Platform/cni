@@ -1,0 +1,5 @@
+
+cilium:
+  cni:
+    exclusive: false # Encryption also uses CNI
+
