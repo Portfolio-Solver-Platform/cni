@@ -3,3 +3,9 @@ cilium:
   cni:
     exclusive: false # Encryption also uses CNI
 
+  hubble:
+    relay:
+      enabled: true
+    ui:
+      enabled: true
+
